@@ -1,0 +1,10 @@
+---
+interface Props {
+    src:string,
+    id: number
+}
+const {src, id} = Astro.props;
+---
+<a href={"img/"+id}>
+    <img transition:animate="slide" transition:name={"img"+id} class="h-auto max-w-full rounded-lg" src={"https://lesquel.github.io/img/"+src} alt="">
+</a>

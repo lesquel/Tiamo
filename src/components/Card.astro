@@ -1,0 +1,33 @@
+---
+import Img from './Img.astro'
+const res = await fetch("https://lesquel.github.io/img/Img.json"),
+  json = await res.json();
+
+---
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+  <div class="grid gap-4">
+    <Img id={0} src={json[0].img}/>
+    <Img id={1} src={json[1].img}/>
+    <Img id={11} src={json[11].img}/>
+    
+  </div>
+  
+  <div class="grid gap-4">
+    <Img id={4} src={json[4].img}/>
+    <Img id={3} src={json[3].img}/>
+    <Img id={5} src={json[5].img}/>
+  </div>
+  
+  <div class="grid gap-4">
+    <Img id={6} src={json[6].img}/>
+    <Img id={10} src={json[10].img}/>
+    <Img id={7} src={json[7].img}/>
+  </div>
+  
+  <div class="grid gap-4">
+    <Img id={2} src={json[2].img}/>
+    <Img id={9} src={json[9].img}/>
+    <Img id={8} src={json[8].img}/>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+---
+import Head from "../../components/Head.astro";
+
+export function getStaticPaths() {
+  return [
+    {params: {name: '0'}},
+    {params: {name: '1'}},
+    {params: {name: '2'}},
+	{params: {name: '3'}},
+    {params: {name: '4'}},
+    {params: {name: '5'}},
+	{params: {name: '6'}},
+    {params: {name: '7'}},
+    {params: {name: '8'}},
+	{params: {name: '9'}},
+    {params: {name: '10'}},
+    {params: {name: '11'}},
+  ];
+}
+
+// export const prerender = true;
+const { name } = Astro.params;
+
+const res = await fetch("https://lesquel.github.io/img/Img.json"),
+  json = await res.json();
+
+let id = name * 1
+let img = json[id]
+---
+
+<html lang="es">
+  <Head />
+  <body class="bg-[#101010]">
+	<div class="container px-5 sm:mx-auto my-10">
+		<header>
+			<h1 class="text-7xl mb-10 py-5 text-[#efefef] font-bold">
+				Mes 8
+				<br>
+				 <span class="text_change ">Te amo</span> 
+				 <span class="text_change block sm:inline-block py-3"> Mi vida <span>❤️</span> </span>
+			</h1>
+		</header>
+    	<a href="/" class="text-3xl font-bold text-white border border-[#FFF] p-2 rounded-md">Volver</a>
+
+		<img class="md:w-1/2 mx-auto rounded-md" transition:animate="slide" transition:name={"img"+img.id} src={"https://lesquel.github.io/img/"+img.img} />
+	</div>
+  </body>
+</html>
