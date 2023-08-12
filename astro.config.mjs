@@ -8,6 +8,4 @@ export default defineConfig({
   experimental: {
 		viewTransitions: true
 	},
-  site: 'https://lesquel.github.io',
-  base: '/Tiamo',
 });
