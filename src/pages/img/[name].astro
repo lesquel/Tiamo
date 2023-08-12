@@ -46,3 +46,39 @@ let img = json[id]
 	</div>
   </body>
 </html>
+
+<script>
+  const c = [
+    "00",
+    "11",
+    "22",
+    "33",
+    "44",
+    "55",
+    "66",
+    "77",
+    "88",
+    "99",
+    "AA",
+    "BB",
+    "CC",
+    "DD",
+    "EE",
+    "FF",
+  ];
+  const n = () => Math.floor(Math.random() * c.length);
+
+  const app = () => {
+    document.querySelectorAll(".text_change").forEach((va) => {
+      const color = c[n()] + c[n()] + c[n()];
+      va.setAttribute("style", `
+  color: #${color}AA;
+  text-shadow: 0 0 10px #${color}55, 0 0 20px #${color}55, 0 0 30px #${color}55;
+  `);
+    });
+  };
+app()
+  setInterval(() => {
+    app()
+  }, 5000);
+</script>
